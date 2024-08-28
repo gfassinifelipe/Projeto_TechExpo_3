@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa do Microondas</title>
+<link rel="stylesheet" href="./paginaManutencaoMicroondas.css">
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <header>
+    <div class="barra-navegacao">
+    <div class="logo">
+    <img src="./navbar/logo.png" alt="Logo">
+    </div>
+    <div class="nome-barra-de-navegacao">Casa do Microondas</div>
+    <a href="./paginaDeLogin.html">
+    <img src="./navbar/login_icon.png" class="botao-de-login">
+    </a>
+    </div>
+    </div>
+     <div class="atalhos-complementares">
+            <a href="./index.html" class="atalho-complementar">Ínicio</a>
+            <a href="./paginaDeContato.html" class="atalho-complementar">Contato</a>
+            <a href="./paginaServico.html" class="atalho-complementar">Serviços</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Localização</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Nossa História</a>
+            <a href="./paginaAvaliacoes.html" class="atalho-complementar">Avaliações</a>
+            </div>
+            </header>
+            
+        
+<div class="caixa-de-escolha">
+    <h1>O que você deseja fazer hoje?</h1>
+<a href="PaginaOrcamento.html" class="botao-de-escolha">
+<img src="./paginaManutencao/reforma.png"alt="Reforma de Microondas">
+</a>
+<a href="PaginaOrcamento.html" class="botao-de-escolha">
+<img src="./paginaManutencao/manutencao.png"alt="Manutencao de Microondas">
+</a>
+
+</div>
+<footer>
+<p>© Casa do Microondas em Curitiba - Conserto de Microondas Curitiba<br>Projeto feito pelos seguintes usuários:
+<a href="./paginaDeApresentacao.html">Clique aqui</a>
+</p>
+</footer>
+
+</body>
+<script>
+    // Função para verificar o login e atualizar o botão de login
+    function atualizarBotaoLogin() {
+        const usuarioLogado = localStorage.getItem('usuario');
+        const loginLink = document.getElementById('login-link');
+        if (usuarioLogado) {
+            loginLink.innerHTML = `<span>${usuarioLogado}</span>`;
+            loginLink.href = '#'; // Remove o link de login
+        }
+    }
+
+    // Chama a função ao carregar a página
+    document.addEventListener('DOMContentLoaded', atualizarBotaoLogin);
+</script>
+</head>

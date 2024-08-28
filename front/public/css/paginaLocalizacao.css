@@ -1,0 +1,112 @@
+/* Estilos globais do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    background-image: url('../imagens/ImagemInicial.png');
+    background-size: 230vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 127vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pseudo-elemento para overlay semi-transparente */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+/* Estilos para o conteúdo da página */
+.conteudo-da-pagina {
+    transform: translateY(-20%); /* Ajuste de posição vertical */
+    margin: auto; /* Centralização horizontal */
+    background-color: #333; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 90%; /* Largura máxima do conteúdo */
+    max-width: 1200px; /* Largura máxima */
+    text-align: center; /* Alinhamento do texto */
+    z-index: 8; /* Camada z-index */
+}
+
+/* Estilos para títulos */
+h1 {
+    color: white; /* Cor do texto */
+}
+
+/* Estilos para parágrafos */
+p {
+    color: white; /* Cor do texto */
+}
+
+/* Container para mapas */
+.mapas {
+    padding: 10px; /* Espaçamento interno */
+    display: flex; /* Layout em linha */
+    justify-content: space-between; /* Espaço entre elementos */
+    margin-top: 20px; /* Margem superior */
+}
+
+/* Estilos para mapa individual */
+.mapa-endereco {
+    width: 45%; /* Largura do mapa */
+}
+
+/* Estilos para o mapa embed */
+.mapa {
+    width: 100%; /* Largura total */
+    height: 300px; /* Altura do mapa */
+    border-radius: 15px; /* Bordas arredondadas */
+    overflow: hidden; /* Ocultar overflow */
+}
+
+/* Estilos para o iframe do mapa */
+.mapa iframe {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    border: 0; /* Sem borda */
+}
+
+/* Estilos adicionais para mapas complementares */
+.mapa-complementar {
+    margin-top: 0; /* Margem superior */
+}
+
+/* Estilos para o endereço */
+.endereco {
+    margin-top: 10px; /* Margem superior */
+    font-size: 1.1em; /* Tamanho da fonte */
+}
+
+/* Estilos para o rodapé */
+footer {
+    margin-top: 20px; /* Margem superior */
+    text-align: center; /* Alinhamento do texto */
+}
+
+/* Estilos para botão de localização */
+.botao-localizacao {
+    margin-top: 20px; /* Margem superior */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1em; 
+    background-color: #ff6600;
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+/* Estilos de hover para botão de localização */
+.botao-localizacao:hover {
+    background-color: #ff4500; /* Cor de fundo ao passar */
+}

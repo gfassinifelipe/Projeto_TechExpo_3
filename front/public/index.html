@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa do Microondas</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./css/paginaInicial.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/botaoWhatsapp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./favicon.ico"/>
+
+    <!-- Política de Segurança -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+</head>
+
+<div id="root"></div>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="barra-navegacao">
+            <div class="logo">
+                <img src="./navbar/logo.png" alt="Logo">
+            </div>
+            <div class="nome-barra-de-navegacao">Casa do Microondas</div>
+
+            <!-- Opções de Login -->
+            <div class="opcoes-de-login-container">
+                <a href="./paginaDeLogin.html" class="botao-login" id="login-link">
+                    <img class="botao-de-login" src="./navbar/login_icon.png" alt="Login" id="login-icon">
+                </a>
+                <div class="nome-usuario-container" id="usuario-menu">
+                    <span id="nome-de-usuario" class="nome-usuario-logado"></span>
+                    <!-- Menu Dropdown -->
+                    <div class="menu-dropdown">
+                        <div class="menu-icon" id="menu-icon">
+                            <i class="fas fa-bars"></i> <!-- Ícone do menu -->
+                        </div>
+                        <div class="menu-content" id="menu-content">
+                            <a href="meuPerfil.html">Meu Perfil</a>
+                            <a href="index.html" id="botao-de-sair">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Atalhos para outras páginas -->
+        <div class="atalhos-complementares">
+            <a href="./index.html" class="atalho-complementar">Ínício</a>
+            <a href="./paginaDeServico.html" class="atalho-complementar">Serviços</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Localização</a>
+            <a href="paginaHistoria.html" class="atalho-complementar">Nossa História</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo da página -->
+    <div class="conteudo-da-pagina">
+        <h1 class="titulo-pagina-inicial">Seja Bem Vindo a Casa do Microondas</h1>
+        <p class="escrita-pagina-inicial">"Atender bem para atender sempre"</p>
+        <br>
+        <p class="escrita-pagina-inicial">Temos suporte para praticamente todos as marcas de Microondas</p>
+        <p class="escrita-pagina-inicial">Faça um orçamento rápido com o nosso sistema inteligente</p>
+        <br>
+        <!-- Botão para abrir modal de orçamento -->
+        <div class="botoes-complementar-geral">
+            <a href="javascript:void(0)" class="botao-complementar-design" onclick="abrirModalOrcamento()">
+                <h1 style="color: white;">Faça já seu orçamento</h1>
+            </a>
+        </div>
+    </div>
+
+    <!-- Botão do WhatsApp -->
+    <div class="whatsapp-button" onclick="abrirModalWhatsApp()">
+        <img src="./imagens/whatsapp.png" alt="WhatsApp">
+    </div>
+
+    <!-- Modal do WhatsApp -->
+    <div class="janela-modal-whatsapp" id="janela-modal-whatsapp">
+        <div class="modal-whatsapp">
+            <button class="fechar" id="fechar-whatsapp">X</button>
+            <h2>Contate-nos pelo WhatsApp</h2>
+            <!-- Botões para contatos por WhatsApp -->
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163600')">
+                Loja 1 - Rebouças, Curitiba
+            </button>
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163602')">
+                Loja 2 - Santa Felicidade, Curitiba
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal para digitar nome -->
+    <div class="janela-modal-nome" id="janela-modal-nome">
+        <div class="modal-nome">
+            <h2>Digite seu nome</h2>
+            <input type="text" id="nome-usuario" placeholder="Seu nome">
+            <button class="enviar-nome" id="enviar-nome">Enviar</button>
+            <button class="fechar-nome" id="fechar-nome">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal de orçamento -->
+    <div class="janela-modal-orcamento" id="janela-modal-orcamento">
+        <div class="modal-orcamento">
+            <button class="fechar-orcamento" id="fechar-orcamento">X</button>
+            <h2>Faça já seu orçamento</h2>
+            <div id="nome-container">
+                <label for="nome">Seu nome:</label>
+                <input type="text" id="nome" placeholder="Seu nome">
+            </div>
+            <label for="produto">Selecione o produto:</label>
+            <select id="produto">
+                <option value="Air Fryer">Air Fryer</option>
+                <option value="Cooktop">Cooktop</option>
+                <option value="Microondas">Microondas</option>
+                <option value="Forno Elétrico">Forno Elétrico</option>
+            </select>
+            <br>
+            <label for="marca">Digite a marca do seu produto:</label>
+            <input type="text" id="marca" placeholder="Marca do seu produto"></input>
+            <br>
+            <label for="problema">Descreva o problema:</label>
+            <textarea id="problema" placeholder="Descreva o problema que você está enfrentando"></textarea>
+            <br>
+            <label for="loja">Selecione a loja:</label>
+            <select id="loja">
+                <option value="41985163600">Loja 1 - Rebouças, Curitiba</option>
+                <option value="41985163602">Loja 2 - Santa Felicidade, Curitiba</option>
+            </select>
+            <br>
+            <button class="enviar-orcamento" id="enviar-orcamento">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© Casa do Microondas em Curitiba - Conserto de Microondas Curitiba<br>Projeto feito pelos seguintes usuários:
+            <a href="./paginaDeApresentacao.html">Clique aqui</a>
+        </p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="./js/token.js"></script>
+    <script src="./js/botaoWhatsapp.js"></script>
+    <script src="./js/orcamento.js"></script>
+</body>
+
+</html>

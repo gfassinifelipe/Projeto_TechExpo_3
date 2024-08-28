@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configuração da codificação e viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Cadastro</title>
+    <!-- Importação de folhas de estilo -->
+    <link rel="stylesheet" href="./fonts/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/paginaDeCadastro.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/botaoWhatsapp.css">
+    <link rel="stylesheet" href="./css/mensagens-servidor.css">
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Barra de navegação -->
+        <div class="barra-navegacao">
+            <!-- Logo da empresa -->
+            <div class="logo">
+                <img src="./navbar/logo.png" alt="Logo">
+            </div>
+            <!-- Nome da empresa -->
+            <div class="nome-barra-de-navegacao">Casa do Microondas</div>
+            <!-- Opções de login -->
+            <div class="opcoes-de-login-container">
+                <a href="./paginaDeLogin.html" class="botao-login" id="login-link">
+                    <img class="botao-de-login" src="./navbar/login_icon.png" alt="Login" id="login-icon">
+                </a>
+                <!-- Menu do usuário logado -->
+                <div class="nome-usuario-container" id="usuario-menu">
+                    <span id="nome-de-usuario" class="nome-usuario-logado"></span>
+                    <!-- Dropdown do menu -->
+                    <div class="menu-dropdown">
+                        <div class="menu-icon" id="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <!-- Conteúdo do menu dropdown -->
+                        <div class="menu-content" id="menu-content">
+                            <a href="meuPerfil.html">Meu Perfil</a>
+                            <a href="index.html" id="logout-button">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Atalhos complementares para outras páginas -->
+        <div class="atalhos-complementares">
+            <a href="./index.html" class="atalho-complementar">Ínicio</a>
+            <a href="./paginaDeServico.html" class="atalho-complementar">Serviços</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Localização</a>
+            <a href="paginaHistoria.html" class="atalho-complementar">Nossa História</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página de cadastro -->
+    <div class="conteudo-da-pagina">
+        <form id="fomulario-de-cadastro" class="formulario-cadastro">
+            <h2>Cadastro</h2>
+            <!-- Linha 1 do formulário -->
+            <div class="linha">
+                <div class="campo">
+                    <label for="nome_cliente">Nome Completo</label>
+                    <input type="text" id="nome_cliente" placeholder="Nome Completo" required>
+                </div>
+                <div class="campo">
+                    <label for="email_cliente">Email</label>
+                    <input type="email" id="email_cliente" placeholder="Email" required>
+                </div>
+            </div>
+            <!-- Linha 2 do formulário -->
+            <div class="linha">
+                <div class="campo">
+                    <label for="senha_cliente">Senha</label>
+                    <!-- Campo de senha com botão para mostrar/esconder -->
+                    <div class="config-mostrar-senha">
+                        <input type="password" id="senha_cliente" placeholder="Senha" required maxlength="30">
+                        <span class="mostrar-senha" id="toggle-senha">
+                            <i class="fas config-olho" id="eye-senha"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="confirmar_senha_cliente">Confirmar Senha</label>
+                    <!-- Campo de confirmação de senha com botão para mostrar/esconder -->
+                    <div class="config-mostrar-senha">
+                        <input type="password" id="confirmar_senha_cliente" placeholder="Confirmar Senha" required
+                            maxlength="30">
+                        <span class="mostrar-senha" id="toggle-confirmar-senha">
+                            <i class="fas config-olho" id="eye-confirmar-senha"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Linha 3 do formulário -->
+            <div class="linha">
+                <div class="campo">
+                    <label for="cpf_cliente">CPF</label>
+                    <input type="text" id="cpf_cliente" placeholder="CPF" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone_cliente">Telefone</label>
+                    <input type="tel" id="telefone_cliente" placeholder="Telefone" required>
+                </div>
+            </div>
+            <!-- Linha 4 do formulário -->
+            <div class="linha">
+                <div class="campo" style="flex: 1; max-width: 100%;">
+                    <label for="data_de_nascimento_cliente">Data de Nascimento</label>
+                    <input type="date" id="data_de_nascimento_cliente" required>
+                </div>
+            </div>
+            <!-- Campo oculto para token de registro -->
+            <input type="hidden" id="token-de-registro" value="">
+            <!-- Botão de envio do formulário -->
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <div class="whatsapp-button" onclick="abrirModalWhatsApp()">
+        <img src="./imagens/whatsapp.png" alt="WhatsApp">
+    </div>
+    <!-- Modal do WhatsApp -->
+    <div class="janela-modal-whatsapp" id="janela-modal-whatsapp">
+        <div class="modal-whatsapp">
+            <button class="fechar" id="fechar-whatsapp">X</button>
+            <h2>Contate-nos pelo WhatsApp</h2>
+            <!-- Botões para contatos via WhatsApp -->
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163600')">
+                Loja 1 - Rebouças, Curitiba
+            </button>
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163602')">
+                Loja 2 - Santa Felicidade, Curitiba
+            </button>
+        </div>
+    </div>
+    <!-- Modal para digitar o nome no WhatsApp -->
+    <div class="janela-modal-nome" id="janela-modal-nome">
+        <div class="modal-nome">
+            <h2>Digite seu nome</h2>
+            <input type="text" id="nome-usuario" placeholder="Seu nome">
+            <button class="enviar-nome" id="enviar-nome">Enviar</button>
+            <button class="fechar-nome" id="fechar-nome">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <!-- Informações de direitos autorais e créditos -->
+        <p>© Casa do Microondas em Curitiba - Conserto de Microondas Curitiba<br>Projeto feito pelos seguintes usuários:
+            <a href="./paginaDeApresentacao.html">Clique aqui</a>
+        </p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="./js/token.js"></script>
+    <script src="./js/botaoWhatsapp.js"></script>
+    <script src="./js/cadastro.js"></script>
+</body>
+
+</html>

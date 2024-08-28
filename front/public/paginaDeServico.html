@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração da codificação e viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Serviços - Casa do Microondas</title>
+    <!-- Importação de folhas de estilo -->
+    <link rel="stylesheet" href="./css/botaoWhatsapp.css">
+    <link rel="stylesheet" href="./css/paginaDeServico.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Barra de navegação -->
+        <div class="barra-navegacao">
+            <!-- Logo da empresa -->
+            <div class="logo">
+                <img src="./navbar/logo.png" alt="Logo">
+            </div>
+            <!-- Nome da empresa -->
+            <div class="nome-barra-de-navegacao">Casa do Microondas</div>
+            <!-- Opções de login -->
+            <div class="opcoes-de-login-container">
+                <a href="./paginaDeLogin.html" class="botao-login" id="login-link">
+                    <img class="botao-de-login" src="./navbar/login_icon.png" alt="Login" id="login-icon">
+                </a>
+                <!-- Menu do usuário logado -->
+                <div class="nome-usuario-container" id="usuario-menu">
+                    <span id="nome-de-usuario" class="nome-usuario-logado"></span>
+                    <!-- Dropdown do menu -->
+                    <div class="menu-dropdown">
+                        <div class="menu-icon" id="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <!-- Conteúdo do menu dropdown -->
+                        <div class="menu-content" id="menu-content">
+                            <a href="meuPerfil.html">Meu Perfil</a>
+                            <a href="index.html" id="botao-de-sair">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Atalhos complementares para outras páginas -->
+        <div class="atalhos-complementares">
+            <a href="./index.html" class="atalho-complementar">Ínicio</a>
+            <a href="./paginaDeServico.html" class="atalho-complementar">Serviços</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Localização</a>
+            <a href="paginaHistoria.html" class="atalho-complementar">Nossa História</a>
+        </div>
+    </header>
+
+    <!-- Container de serviços -->
+    <div class="servicos-container" id="servicos-container">
+        <!-- Item de serviço: Marcas -->
+        <div class="servico-item" id="marcas-container">
+            <div class="servico-header" onclick="toggleContent('marcas-content', this)">
+                <h2>Marcas</h2>
+                <i class="fas fa-chevron-down"></i> <!-- Ícone de seta para indicar expansão -->
+            </div>
+            <div class="servico-content" id="marcas-content">
+                <div class="content-wrapper" id="marcas-wrapper"></div> <!-- Conteúdo das marcas -->
+            </div>
+        </div>
+
+        <!-- Item de serviço: Produtos -->
+        <div class="servico-item" id="produtos-container">
+            <div class="servico-header" onclick="toggleContent('produtos-content', this)">
+                <h2>Produtos</h2>
+                <i class="fas fa-chevron-down"></i> <!-- Ícone de seta para indicar expansão -->
+            </div>
+            <div class="servico-content" id="produtos-content">
+                <div class="content-wrapper" id="produtos-wrapper"></div> <!-- Conteúdo dos produtos -->
+            </div>
+        </div>
+
+        <!-- Item de serviço: Serviços -->
+        <div class="servico-item" id="servicos-container">
+            <div class="servico-header" onclick="toggleContent('servicos-content', this)">
+                <h2>Serviços</h2>
+                <i class="fas fa-chevron-down"></i> <!-- Ícone de seta para indicar expansão -->
+            </div>
+            <div class="servico-content" id="servicos-content">
+                <div class="content-wrapper" id="servicos-wrapper"></div> <!-- Conteúdo dos serviços -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal genérico -->
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fechar">X</button> <!-- Botão para fechar o modal -->
+            <img id="imagem-modal" src="" alt=""> <!-- Imagem no modal -->
+            <h1 id="titulo-modal"></h1> <!-- Título no modal -->
+            <p id="descricao-modal"></p> <!-- Descrição no modal -->
+        </div>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <div class="whatsapp-button" onclick="abrirModalWhatsApp()">
+        <img src="./imagens/whatsapp.png" alt="WhatsApp">
+    </div>
+    <!-- Modal do WhatsApp -->
+    <div class="janela-modal-whatsapp" id="janela-modal-whatsapp">
+        <div class="modal-whatsapp">
+            <button class="fechar" id="fechar-whatsapp">X</button> <!-- Botão para fechar o modal -->
+            <h2>Contate-nos pelo WhatsApp</h2>
+            <!-- Botões para contatos via WhatsApp -->
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163600')">Loja 1 - Rebouças, Curitiba</button>
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163602')">Loja 2 - Santa Felicidade, Curitiba</button>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <!-- Informações de direitos autorais e créditos -->
+        <p>© Casa do Microondas em Curitiba - Conserto de Microondas Curitiba<br>Projeto feito pelos seguintes usuários:
+            <a href="./paginaDeApresentacao.html">Clique aqui</a></p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="./js/servico.js"></script>
+    <script src="./js/botaoWhatsapp.js"></script>
+    <script src="./js/token.js"></script>
+</body>
+</html>

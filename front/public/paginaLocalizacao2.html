@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configuração da codificação e viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Casa do Microondas - Editar Endereço</title>
+    <!-- Importação de folhas de estilo -->
+    <link rel="stylesheet" href="./css/paginaLocalizacao2.css">
+    <link rel="stylesheet" href="./css/botaoWhatsapp.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/mensagens-servidor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Barra de navegação -->
+        <div class="barra-navegacao">
+            <!-- Logo da empresa -->
+            <div class="logo">
+                <img src="./navbar/logo.png" alt="Logo">
+            </div>
+            <!-- Nome da empresa -->
+            <div class="nome-barra-de-navegacao">Casa do Microondas</div>
+            <!-- Opções de login -->
+            <div class="opcoes-de-login-container">
+                <a href="./paginaDeLogin.html" class="botao-login" id="login-link">
+                    <img class="botao-de-login" src="./navbar/login_icon.png" alt="Login" id="login-icon">
+                </a>
+                <!-- Menu do usuário logado -->
+                <div class="nome-usuario-container" id="usuario-menu">
+                    <span id="nome-de-usuario" class="nome-usuario-logado"></span>
+                    <!-- Dropdown do menu -->
+                    <div class="menu-dropdown">
+                        <div class="menu-icon" id="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <!-- Conteúdo do menu dropdown -->
+                        <div class="menu-content" id="menu-content">
+                            <a href="meuPerfil.html">Meu Perfil</a>
+                            <a href="index.html" id="botao-de-sair">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Atalhos complementares para outras páginas -->
+        <div class="atalhos-complementares">
+            <a href="./index.html" class="atalho-complementar">Ínicio</a>
+            <a href="./paginaDeServico.html" class="atalho-complementar">Serviços</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Localização</a>
+            <a href="paginaHistoria.html" class="atalho-complementar">Nossa História</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <div class="conteudo-da-pagina">
+        <!-- Título da seção -->
+        <h2>Endereço</h2>
+        <!-- Caixa de formulário oculta para exibir o endereço salvo -->
+        <div class="caixa-form hidden" id="caixa-form">
+            <p id="endereco-salvo"></p>
+            <!-- Botões para editar ou usar o endereço -->
+            <button class="endereco-button" id="editar-endereco">Editar</button>
+            <button class="endereco-button" id="usar-endereco">Usar esse
+                endereço</button>
+        </div>
+        <!-- Formulário para editar o endereço -->
+        <div class="caixa-form-2 hidden" id="caixa-form-2">
+            <form id="form-endereco">
+                <!-- Campos do formulário -->
+                <label class="labels-campos" for="endereco-cliente">Endereço</label>
+                <input type="text" id="endereco" name="endereco" class="campo" placeholder="Insira seu endereço">
+                <label class="labels-campos" for="complemeto-cliente">Complemento</label>
+                <input type="text" id="complemento" name="complemento" class="campo" placeholder="Insira seu complemento">
+                <label class="labels-campos" for="bairro-cliente">Bairro</label>
+                <input type="text" id="bairro" name="bairro" class="campo" placeholder="Insira seu bairro">
+                <label class="labels-campos" for="numero-cliente">Número da casa</label>
+                <input type="text" id="numero" name="numero" class="campo" placeholder="Insira o número da casa">
+                <label class="labels-campos" for="cidade-cliente">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="campo" placeholder="Insira sua cidade">
+                <label class="labels-campos" for="estado-cliente">Estado</label>
+                <input type="text" id="estado" name="estado" class="campo" placeholder="Insira seu estado">
+                <label class="labels-campos" for="CEP-cliente">CEP</label>
+                <input type="text" id="cep" name="cep" class="campo" placeholder="Insira seu CEP">
+                <!-- Botão para enviar o formulário -->
+                <button type="submit" class="form-button">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <div class="whatsapp-button" onclick="abrirModalWhatsApp()">
+        <img src="./imagens/whatsapp.png" alt="WhatsApp">
+    </div>
+    <!-- Modal do WhatsApp -->
+    <div class="janela-modal-whatsapp" id="janela-modal-whatsapp">
+        <div class="modal-whatsapp">
+            <button class="fechar" id="fechar-whatsapp">X</button>
+            <h2>Contate-nos pelo WhatsApp</h2>
+            <!-- Botões para contatos via WhatsApp -->
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163600')">
+                Loja 1 - Rebouças, Curitiba
+            </button>
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163602')">
+                Loja 2 - Santa Felicidade, Curitiba
+            </button>
+        </div>
+    </div>
+    <!-- Modal para inserção de nome -->
+    <div class="janela-modal-nome" id="janela-modal-nome">
+        <div class="modal-nome">
+            <h2>Digite seu nome</h2>
+            <input type="text" id="nome-usuario" placeholder="Seu nome">
+            <button class="enviar-nome" id="enviar-nome">Enviar</button>
+            <button class="fechar-nome" id="fechar-nome">Cancelar</button>
+        </div>
+    </div>
+    <!-- Rodapé da página -->
+    <footer>
+        <!-- Informações de direitos autorais e créditos -->
+        <p>© Casa do Microondas em Curitiba - Conserto de Microondas Curitiba<br>Projeto feito pelos seguintes usuários:
+            <a href="./paginaDeApresentacao.html">Clique aqui</a></p>
+    </footer>
+    <!-- Scripts JavaScript -->
+    <script src="./js/token.js"></script>
+    <script src="./js/botaoWhatsapp.js"></script>
+    <script src="./js/endereco.js"></script>
+</body>
+</html>

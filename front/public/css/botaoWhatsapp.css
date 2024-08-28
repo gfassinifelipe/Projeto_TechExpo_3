@@ -1,0 +1,160 @@
+/* Estilo do botão do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9990;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Modal do WhatsApp */
+.janela-modal-whatsapp {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9991;
+}
+
+.janela-modal-whatsapp.abrir {
+    display: flex;
+}
+
+.modal-whatsapp {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-whatsapp h2 {
+    margin-bottom: 20px;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.whatsapp-contato {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-contato:hover {
+    background-color: #1ebe57;
+}
+
+
+
+
+/* Modal para coletar o nome */
+.janela-modal-nome {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9992;
+}
+
+.janela-modal-nome.abrir {
+    display: flex;
+}
+
+.modal-nome {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-nome h2 {
+    margin-bottom: 20px;
+}
+
+.modal-nome input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.enviar-nome, .fechar-nome {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.enviar-nome {
+    background-color: #25D366;
+    color: white;
+}
+
+.enviar-nome:hover {
+    background-color: #1ebe57;
+}
+
+.fechar-nome {
+    background-color: red;
+    color: white;
+}
+
+.fechar-nome:hover {
+    background-color: darkred;
+}
+
+/* Fim da configuração do modal para coletar o nome */

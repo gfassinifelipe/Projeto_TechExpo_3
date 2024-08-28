@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração - Casa do Microondas</title>
+    <!-- Importa folhas de estilo -->
+    <link rel="stylesheet" href="./css/botaoWhatsapp.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.png">
+    <!-- Configura a Política de Segurança de Conteúdo -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Barra de navegação -->
+        <div class="barra-navegacao">
+            <div class="logo">
+                <img src="./navbar/logo.png" alt="Logo">
+            </div>
+            <div class="nome-barra-de-navegacao">Casa do Microondas</div>
+            <!-- Opções de login -->
+            <div class="opcoes-de-login-container">
+                <a href="./paginaDeLogin.html" class="botao-login" id="login-link">
+                    <img class="botao-de-login" src="./navbar/login_icon.png" alt="Login" id="login-icon">
+                </a>
+                <!-- Menu do usuário logado (inicialmente oculto) -->
+                <div class="nome-usuario-container" style="display: none;" id="usuario-menu">
+                    <span id="nome-de-usuario" class="nome-usuario-logado"></span>
+                    <!-- Dropdown do menu -->
+                    <div class="menu-dropdown">
+                        <div class="menu-icon" id="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <div class="menu-content" id="menu-content">
+                            <a href="meuPerfil.html">Meu Perfil</a>
+                            <a href="index.html" id="botao-de-sair">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Atalhos complementares para outras páginas -->
+        <div class="atalhos-complementares">
+            <a href="./index.html" class="atalho-complementar">Início</a>
+            <a href="./paginaDeServico.html" class="atalho-complementar">Serviços</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Localização</a>
+            <a href="paginaLocalizacao.html" class="atalho-complementar">Nossa História</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <div class="conteudo-da-pagina">
+        <h1 class="titulo-pagina-inicial">Painel de Administração</h1>
+        <p class="escrita-pagina-inicial">Gerencie as marcas, produtos e serviços</p>
+        
+        <!-- Container de botões para adicionar novos itens -->
+        <div class="servicos-container">
+            <button class="botao-adicionar" onclick="abrirModal('AdicionarMarca')">Adicionar Marca</button>
+            <button class="botao-adicionar" onclick="abrirModal('AdicionarProduto')">Adicionar Produto</button>
+            <button class="botao-adicionar" onclick="abrirModal('AdicionarServico')">Adicionar Serviço</button>
+        </div>
+
+        <!-- Container de botões para ações (editar e excluir) -->
+        <div class="acoes-container">
+            <button class="botao-acoes" onclick="mostrarOpcoes('Editar')">Editar</button>
+            <button class="botao-acoes" onclick="mostrarOpcoes('Excluir')">Excluir</button>
+        </div>
+
+        <!-- Container de opções (marcas, produtos, serviços) -->
+        <div class="opcoes-container" id="opcoes-container" style="display: none;">
+            <button class="botao-opcao" onclick="mostrarItens('marcas')">Marcas</button>
+            <button class="botao-opcao" onclick="mostrarItens('produtos')">Produtos</button>
+            <button class="botao-opcao" onclick="mostrarItens('servicos')">Serviços</button>
+        </div>
+    </div>
+
+    <!-- Modal para adicionar novos itens -->
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fechar">X</button>
+            <h1 id="titulo-modal"></h1>
+            <form id="formulario-adicionar" enctype="multipart/form-data">
+                <div class="campo">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+                <div class="campo">
+                    <label for="imagem">Imagem</label>
+                    <input type="file" id="imagem" name="imagem" required>
+                </div>
+                <div class="campo" id="campo-url" style="display: none;">
+                    <label for="url">URL</label>
+                    <input type="text" id="url" name="url">
+                </div>
+                <div class="campo" id="campo-desc">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" required></textarea>
+                </div>
+                <button type="submit" class="botao-enviar">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para exibir itens -->
+    <div class="janela-modal" id="janela-modal-itens">
+        <div class="modal">
+            <button class="fechar" id="fechar-itens">X</button>
+            <h1 id="titulo-modal-itens"></h1>
+            <div id="lista-itens"></div>
+        </div>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <div class="whatsapp-button" onclick="abrirModalWhatsApp()">
+        <img src="./imagens/whatsapp.png" alt="WhatsApp">
+    </div>
+    <!-- Modal do WhatsApp -->
+    <div class="janela-modal-whatsapp" id="janela-modal-whatsapp">
+        <div class="modal-whatsapp">
+            <button class="fechar" id="fechar-whatsapp">X</button>
+            <h2>Contate-nos pelo WhatsApp</h2>
+            <!-- Botões para contatos via WhatsApp -->
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163600')">
+                Loja 1 - Rebouças, Curitiba
+            </button>
+            <button class="whatsapp-contato" onclick="mostrarPromptNome('41985163602')">
+                Loja 2 - Santa Felicidade, Curitiba
+            </button>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <!-- Informações de direitos autorais e créditos -->
+        <p>© Casa do Microondas em Curitiba - Conserto de Microondas Curitiba<br>Projeto feito pelos seguintes usuários:
+            <a href="./paginaDeApresentacao.html">Clique aqui</a>
+        </p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="./js/token.js"></script>
+    <script src="./js/admin.js"></script>
+    <script src="./js/botaoWhatsapp.js"></script>
+</body>
+</html>

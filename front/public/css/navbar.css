@@ -1,0 +1,148 @@
+/* Define a posição do cabeçalho no topo da página, com largura total e fundo preto */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+}
+
+/* Define o estilo da barra de navegação com altura fixa, alinhamento e preenchimento */
+.barra-navegacao {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+}
+
+/* Define o estilo do nome da barra de navegação, centralizado e com estilo personalizado */
+.nome-barra-de-navegacao {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Define o estilo da imagem do logo, com altura máxima e alinhamento vertical */
+.logo img {
+    display: inline-block;
+    vertical-align: middle;
+    height: max-content;
+    max-height: 60px;
+}
+
+/* Define o estilo para o contêiner das opções de login, alinhado à direita */
+.opcoes-de-login-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    z-index: 100;
+}
+
+/* Define o estilo do botão de login, ajustando o tamanho e cursor */
+.botao-de-login {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+/* Define a animação de aumento do botão de login ao passar o mouse */
+.botao-de-login:hover {
+    transform: scale(1.2);
+}
+
+/* Define o estilo do nome do usuário logado, com margem e cor */
+.nome-usuario-logado {
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Define o estilo do contêiner do nome do usuário, alinhado horizontalmente */
+.nome-usuario-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Define o estilo para os atalhos complementares na parte inferior da barra de navegação */
+.atalhos-complementares {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 50px;
+    background-color: black;
+}
+
+/* Define o estilo dos atalhos complementares, com cor branca e efeito de hover */
+.atalho-complementar {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.atalho-complementar:hover {
+    background-color: #333;
+}
+
+/* Define o estilo do menu dropdown, com posicionamento relativo */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Define o estilo do ícone do menu, com tamanho e cursor */
+.menu-icon {
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Define o estilo do conteúdo do menu dropdown, escondido por padrão */
+.menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Define o estilo dos links dentro do menu dropdown */
+.menu-content a {
+    color: black;
+    padding: 15px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Define o estilo do hover para os links dentro do menu dropdown */
+.menu-content a:hover {
+    background-color: #ddd;
+}
+
+/* Classe para exibir o menu dropdown quando ativado */
+.show {
+    display: block;
+}
+
+/* Define o estilo do rodapé, com fundo preto e texto branco */
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 98.8%;
+    z-index: 201;
+}

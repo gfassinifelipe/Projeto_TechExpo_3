@@ -1,0 +1,345 @@
+/* Estilos globais do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+/* Barra de navegação no cabeçalho */
+.barra-navegacao {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+}
+
+/* Nome da barra de navegação */
+.nome-barra-de-navegacao {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Logo no cabeçalho */
+.logo img {
+    display: inline-block;
+    vertical-align: middle;
+    height: max-content;
+    max-height: 60px;
+}
+
+/* Container para opções de login */
+.opcoes-de-login-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    z-index: 100;
+}
+
+/* Botão de login */
+.botao-de-login {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.botao-de-login:hover {
+    transform: scale(1.2);
+}
+
+/* Nome do usuário logado */
+.nome-usuario-logado {
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Container do nome do usuário */
+.nome-usuario-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Atalhos complementares */
+.atalhos-complementares {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 50px;
+    background-color: black;
+}
+
+/* Atalho complementar */
+.atalho-complementar {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.atalho-complementar:hover {
+    background-color: #333;
+}
+
+/* Menu dropdown */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Ícone do menu */
+.menu-icon {
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Conteúdo do menu dropdown */
+.menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu-content a {
+    color: black;
+    padding: 15px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-content a:hover {
+    background-color: #ddd;
+}
+
+/* Exibir conteúdo do menu dropdown */
+.show {
+    display: block;
+}
+
+/* Estilos dos serviços */
+.servicos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px; /* Ajustado para não sobrepor a navbar */
+    z-index: 2;
+    width: 100%;
+}
+
+/* Item de serviço */
+.servico-item {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Cabeçalho do serviço */
+.servico-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servico-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.servico-header i {
+    font-size: 20px;
+}
+
+/* Conteúdo do serviço */
+.servico-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.item {
+    display: inline-block;
+    width: 150px;
+    margin: 0 10px;
+}
+
+/* Botão Next sem animação */
+.botao-proximo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background-color: #f0f0f0;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Estilos do modal */
+.janela-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.janela-modal.abrir {
+    display: flex;
+}
+
+/* Estilos do conteúdo do modal */
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Estilo para botão geral */
+button {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background-color: #fff7f7;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button img {
+    display: block;
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain; /* Ajuste para evitar esticar a imagem */
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+button span {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    display: block;
+    white-space: normal; /* Permite a quebra de linha */
+    word-wrap: break-word; /* Quebra as palavras longas */
+}
+
+button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1); 
+}
+
+button:hover img {
+    transform: scale(1.2); 
+}
+
+/* Estilos dos itens */
+.Servico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 1000px;
+    z-index: 21;
+}
+
+.Servico img {
+    max-width: 100%;
+    height: auto; 
+    border: 4px solid rgba(255, 0, 0, 0); 
+    border-radius: 20px; 
+    position: relative; 
+    transition: all 0.3s;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0); 
+}
+
+/* Rodapé da página */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 98.8%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}

@@ -1,0 +1,162 @@
+/* Estilo geral do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    background-image: url('../imagens/ImagemInicial.png');
+    background-size: 230vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 127vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sobreposição semi-transparente no corpo da página */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+/* Estilo do conteúdo da página */
+.conteudo-da-pagina {
+    margin-top: 10px;
+    padding: 10px;
+    padding: 50px; /* Redundante, talvez seja um erro */
+    border-radius: 50px;
+    height: calc(112vh - 10px);
+    z-index: 2;
+}
+
+/* Estilo do título da página inicial */
+.titulo-pagina-inicial {
+    font-size: 58px;
+    text-align: center;
+}
+
+/* Estilo do texto na página inicial */
+.escrita-pagina-inicial {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Estilo dos botões complementares */
+.botoes-complementar-geral {
+    display: flex;
+    align-items: center;
+    max-width: 1700px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+/* Estilo do botão de design complementar */
+.botao-complementar-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 30px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    text-decoration: none;
+    margin: auto;
+}
+
+/* Efeito de hover no botão de design complementar */
+.botao-complementar-design:hover {
+    opacity: 0.7;
+}
+
+/* Estilos para o modal de orçamento */
+.janela-modal-orcamento {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-orcamento {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.modal-orcamento h2 {
+    margin-top: 0;
+}
+
+.modal-orcamento label {
+    display: block;
+    margin-top: 10px;
+}
+
+.modal-orcamento input[type="text"],
+.modal-orcamento select,
+.modal-orcamento textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-orcamento textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.enviar-orcamento, .fechar-orcamento {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.enviar-orcamento:hover, .fechar-orcamento:hover {
+    background-color: #333;
+}
+
+.fechar-orcamento {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: red;
+}
+
+.fechar-orcamento:hover {
+    background-color: darkred;
+}
+
+/* Fim dos estilos para o modal de orçamento */
