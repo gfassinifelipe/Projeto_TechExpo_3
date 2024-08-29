@@ -16,7 +16,7 @@
 **Clone o repositório e navegue até o diretório front:**
 
 ```
-git clone https://github.com/JoJoDomina/CMO-Completo
+git clone https://github.com/gfassinifelipe/Projeto_TechExpo_3
 cd front
 ```
 
